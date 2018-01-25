@@ -1,0 +1,87 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑"; }
+
+.container {
+  width: 10rem;
+  height: 100%;
+  background: #f0f0f3;
+  margin: 0 auto; }
+
+.content {
+  padding-top: 0.6rem; }
+  .content h2 {
+    text-align: center;
+    font-size: 0.5rem; }
+  .content > p {
+    color: #888888;
+    text-align: center;
+    margin-top: 0.2rem; }
+  .content > span {
+    background: url("../../images/collection_03.jpg");
+    background-size: 100% 100%;
+    width: 2.4rem;
+    height: 0.42rem;
+    display: block;
+    margin: 0.3rem auto; }
+  .content .detail p {
+    line-height: 1.186667rem;
+    width: 100%;
+    padding-top: 0.133333rem;
+    padding-bottom: 0.133333rem;
+    border-bottom: 1px solid #dcdcdc;
+    padding-left: 0.4rem;
+    background: white; }
+    .content .detail p > span {
+      color: #888888; }
+    .content .detail p a {
+      margin-left: 0.5rem;
+      text-decoration: none; }
+    .content .detail p:nth-of-type(1) {
+      padding-right: 0.4rem; }
+      .content .detail p:nth-of-type(1) a {
+        color: #222222; }
+        .content .detail p:nth-of-type(1) a span:nth-of-type(2) {
+          background: url("../../images/right_03.jpg");
+          background-size: 100% 100%;
+          width: 0.25rem;
+          height: 0.373333rem;
+          display: inline-block;
+          float: right;
+          margin-top: 0.35rem; }
+    .content .detail p:nth-of-type(2) a {
+      color: #617594; }
+  .content .detail > div {
+    padding-top: 0.133333rem;
+    padding-bottom: 0.133333rem;
+    padding-left: 0.4rem;
+    zoom: 1;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    display: -webkit-flex; }
+    .content .detail > div:after {
+      display: block;
+      clear: both;
+      content: ''; }
+    .content .detail > div span {
+      width: 1.5rem;
+      color: #888888; }
+    .content .detail > div ul {
+      height: 100%; }
+      .content .detail > div ul li {
+        width: 1.8rem;
+        height: 1.8rem;
+        float: left;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem; }
+        .content .detail > div ul li img {
+          height: 100%;
+          width: 100%; }
+
+/*# sourceMappingURL=wonderfulAtlas2.css.map */

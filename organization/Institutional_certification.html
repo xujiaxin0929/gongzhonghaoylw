@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机构认证</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/Institutional_certification/Institutional_certification.css"/>
+    <script src="./comm/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <style type="text/css">
+      /*   .content ul li
+         {
+            display: block!important;
+         }
+        .content ul li:nth-of-type(2) p
+        {
+            display: block;
+        }
+        .content ul li:nth-of-type(2) p span:nth-of-type(1)
+        {
+            float: left;
+        }
+        .content ul li:nth-of-type(2) p::after
+        {
+            display: block;
+            clear: both;
+            content: '';
+        }
+        .content ul li:nth-of-type(1) p
+        {
+            display: block;
+        }*/
+        #up_img
+        {
+            text-align: center;
+            color:#878787;
+            font-size: 0.5rem;
+            padding: 1rem;
+        }
+        #img
+        {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <ul>
+                <li class="clearfix"><p class="clearfix"><span></span><input type="text" id="orgName" readonly class="name"/></p></li>
+              <!--   <li class="clearfix"><p class="clearfix"><span></span><span id="tip">请上传营业执照/组织机构代码证/养老机构设立许可证</span></p><span><a href="javascript:;" id="up">上传</a></span></li> -->
+              <li class="clearfix" id="update_box"><p class="clearfix"><span></span><span id="tip">请上传营业执照/组织机构代码证/养老机构设立许可证</span></p><span><a href="javascript:;" id="up">上传</a></span></li>
+                <li class="clearfix"><span></span><input type="text" placeholder="联系人" id="contact"/></li>
+                <li class="clearfix"><span></span><input type="tel" placeholder="请输入手机号" id="tel"/></li>
+                <li class="clearfix" id="code_box"><span></span><input type="text" placeholder="请输入验证码" id="code"><span id="getCode">获取验证码</span></li>
+            </ul>
+            <div id="btn"><button type="button"><a href="javascript:;" class="sub">提交</a></button></div>
+        </div>
+        <div id="up_img" style="display:none">
+            <p>证件照片</p>
+            <img id="img" src="./images/1_06.jpg">
+        </div>
+    </div>
+</body>
+<script src="./comm/js/jquery-weui.min.js"></script>
+<script src="./js/Institutional_certification.js"></script>
+</html>

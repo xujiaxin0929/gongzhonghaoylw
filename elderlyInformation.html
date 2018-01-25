@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老人信息</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/elderlyInformation/elderlyInformation.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="old">
+                <p class="title"><span></span><span>老人信息</span></p>
+                <table id="elderList">
+                    
+                </table>
+                <script type="text/html" id="tempElder">
+                    {{each data item}}
+                    <tr data-id="{{item.id}}">
+                        <td>
+                            <input id="c_{{item.id}}" value="{{item.id}}" type="checkbox"  >
+                            <label for="c_{{item.id}}" class="lab"></label>
+                        </td>
+                        <td><label for="c_{{item.id}}">{{item.name}}</label></td>
+                        <td><label for="c_{{item.id}}">{{item.sex=='famale'?'女':'男'}}</label></td>
+                        <td><label for="c_{{item.id}}">{{item.age}}岁</label></td>
+                        <td><label for="c_{{item.id}}">{{item.nursing_level}}</label></td>
+                        <td class="del" data-id="{{item.id}}"><span></span></td>
+                    </tr>
+                    {{/each}}
+                </script>
+                <p><a href="javascript:;" id="sureSelect"><span></span>确认选择</a><a href="./append.html"><span></span>添加老人信息</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="index.html" class="on"><span></span><br/>养老院查询</a></li>
+                <li><a href=""><span></span><br/>养老院地图</a></li>
+                <li><a href="pension.html"><span></span><br/>旅居养老</a></li>
+                <li><a href="personalCenter.html"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/elderlyInformation.js"></script>
+</html>

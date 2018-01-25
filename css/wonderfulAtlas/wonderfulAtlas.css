@@ -1,0 +1,75 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑"; }
+
+.container {
+  width: 10rem;
+  margin: 0 auto; }
+  .container .content {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1.466667rem; }
+    .container .content ul {
+      width: 100%;
+      height: 100%; }
+      .container .content ul li {
+        width: 100%;
+        height: 3.6rem;
+        margin-bottom: .1rem; }
+        .container .content ul li img {
+          width: 100%;
+          height: 100%; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  width: 10rem;
+  height: 1.466667rem;
+  border-top: 1px solid #dcdcdc; }
+  .footer ul {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: 100%; }
+    .footer ul li {
+      text-align: center;
+      width: 100%;
+      padding-top: 0.28rem; }
+      .footer ul li a {
+        color: #878787;
+        text-decoration: none; }
+      .footer ul li > .on {
+        color: #1da09c; }
+      .footer ul li:nth-of-type(1) > a > span {
+        background: url("../../images/search_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.4rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(2) > a > span {
+        background: url("../../images/address_03.jpg");
+        background-size: 100% 100%;
+        width: 0.453333rem;
+        height: 0.44rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(3) > a > span {
+        background: url("../../images/lv_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.48rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(4) > a > span {
+        background: url("../../images/me_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.426667rem;
+        display: inline-block; }
+
+/*# sourceMappingURL=wonderfulAtlas.css.map */

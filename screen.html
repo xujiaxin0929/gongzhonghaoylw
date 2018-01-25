@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件筛选</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+     <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/screen/screen.css"/>
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+</head>
+<style type="text/css">
+    .bg
+    {
+        background-color: #feb33e !important;
+        color: white;
+    }
+</style>
+<body>
+    <div class="container" style="background-color:white">
+        <header id="expressArea">
+            <span id="cityName">北京-北京市-朝阳区</span>
+            <span><a href="javascript:;"></a></span>
+        </header>
+        <div class="content">
+            <div>
+                <p>机构类型</p>
+                <ul  id="type"></ul>
+                <script type="text/html" id="tempType">
+                    {{each data value}}
+                        {{if value.filterTitle=='type'}}
+                            {{each value.filterItem item}}
+                                <li data-id="{{item.id}}">{{item.name}}</li>
+                            {{/each}}
+                        {{/if}}
+                    {{/each}}
+                </script>
+            </div>
+            <div>
+                <p>收费标准</p>
+                <ul id="charge">
+                    <li class="down" data-id="0-999">1000以下</li>
+                    <li data-id="1000-1999">1000-1999</li>
+                    <li data-id="2000-2999">2000-2999</li>
+                    <li data-id="3000-3999">3000-3999</li>
+                    <li data-id="4000-4999">4000-4999</li>
+                    <li data-id="5000-5999">5000-5999</li>
+                    <li data-id="6000-6999">6000-6999</li>
+                    <li data-id="7000-7999">7000-7999</li>
+                    <li data-id="8000-8999">8000-8999</li>
+                    <li class="top" data-id="10000-100000">10000以上</li>
+                </ul>
+            </div>
+            <div>
+                <p>护理级别</p>
+                <ul id="nurse">
+
+                </ul>
+                <script type="text/html" id="tempNurse">
+                    {{each data value}}
+                        {{if value.filterTitle=='nurse'}}
+                            {{each value.filterItem item}}
+                                <li  data-id="{{item.id}}">{{item.name}}</li>
+                            {{/each}}
+                        {{/if}}
+                    {{/each}}
+                </script>
+            </div>
+            <div>
+                <p>机构特色(多选)</p>
+                <ul id="feature">
+
+                </ul>
+                <script type="text/html" id="tempFeature">
+                    {{each data value}}
+                        {{if value.filterTitle=='feature'}}
+                            {{each value.filterItem item}}
+                                <li  data-id="{{item.id}}" data-filterTitle="feature">{{item.name}}</li>
+                            {{/each}}
+                        {{/if}}
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+        <div class="footer">
+            <button id="doSure">确定</button>
+        </div>
+    </div>
+     <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择地区</h3>
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script src="./comm/js/jquery.area_filter.js"></script>
+    <script src="js/screen.js"></script>
+</html>

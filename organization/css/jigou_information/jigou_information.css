@@ -1,0 +1,163 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑";
+  background: #f6f6f6; }
+
+.container {
+  width: 10rem;
+  margin: 0 auto; }
+  .container .content {
+    width: 100%;
+    height: 100%; }
+    .container .content p {
+      width: 100%;
+      border-bottom: 1px solid #dcdcdc;
+      padding: 0rem 0;
+      padding-left: 1.8rem;
+      padding-right: 0.5rem;
+      background: #fff; 
+      display: inline-flex;
+      display: -webkit-inline-flex;
+      align-items: center;
+      -webkit-align-items: center;
+    }
+      .container .content p input {
+        height: 1.2rem;
+        width: 7rem;
+        border: none;
+        outline: none;
+        background: white; }
+      .container .content p:nth-of-type(1) {
+        position: relative; }
+        .container .content p:nth-of-type(1) span {
+          background: url("../../images/house.png");
+          background-size: 100% 100%;
+          width: 0.426667rem;
+          height: 0.453333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top: 0.4rem; }
+      .container .content p:nth-of-type(2) {
+        position: relative; }
+        .container .content p:nth-of-type(2) span {
+          background: url("../../images/telnum_03.jpg");
+          background-size: 100% 100%;
+          width: 0.32rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top: 0.4rem; }
+      .container .content p:nth-of-type(3) {
+        position: relative; }
+        .container .content p:nth-of-type(3) span:nth-of-type(1) {
+          background: url("../../images/address2.png");
+          background-size: 100% 100%;
+          width: 0.42rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top: 0.4rem; }
+      .container .content p:nth-of-type(4) {
+        position: relative; }
+        .container .content p:nth-of-type(4) span {
+          background: url("../../images/xidz.png");
+          background-size: 100% 100%;
+          width: 0.42rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top: 0.4rem; }
+      .container .content p:nth-of-type(5) {
+        position: relative; }
+        .container .content p:nth-of-type(5) span:nth-of-type(1) {
+          background: url("../../images/jwd.png");
+          background-size: 100% 100%;
+          width: 0.5rem;
+          height: 0.5rem;
+          position: absolute;
+          left: 0.986667rem;
+          top: 0.4rem; }
+      .container .content p span:nth-of-type(2) {
+        float: right;
+        background: url("../../images/right_03.jpg");
+        background-size: 100% 100%;
+        width: 0.226667rem;
+        height: 0.413333rem;
+        display: inline-block; }
+    .container .content button {
+      width: 9.373333rem;
+      height: 1.2rem;
+      background: #feb33e;
+      margin: 0 auto;
+      margin-top: 1.06rem;
+      display: block;
+      border: none;
+      outline: none;
+      border-radius: 0.1rem;
+      font-size: 0.45rem;
+      letter-spacing: 0.2rem; }
+      .container .content button a {
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 1.2rem;
+        text-decoration: none; }
+    .container .content > span {
+      display: block;
+      color: #8e8e8e;
+      text-align: center;
+      margin-top: 0.506667rem; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  width: 10rem;
+  height: 1.466667rem;
+  border-top: 1px solid #dcdcdc; }
+  .footer ul {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: 100%; }
+    .footer ul li {
+      text-align: center;
+      width: 100%;
+      padding-top: 0.28rem; }
+      .footer ul li a {
+        color: #878787; }
+      .footer ul li > .on {
+        color: #1da09c; }
+      .footer ul li:nth-of-type(1) > a > span {
+        background: url("../../images/search_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.4rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(2) > a > span {
+        background: url("../../images/address_03.jpg");
+        background-size: 100% 100%;
+        width: 0.453333rem;
+        height: 0.44rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(3) > a > span {
+        background: url("../../images/lv_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.48rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(4) > a > span {
+        background: url("../../images/me_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.426667rem;
+        display: inline-block; }
+
+/*# sourceMappingURL=jigou_information.css.map */

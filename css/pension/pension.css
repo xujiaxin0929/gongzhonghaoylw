@@ -1,0 +1,102 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑"; }
+
+.container {
+  width: 10rem;
+  margin: 0 auto; }
+  .container .content {
+    padding-bottom: 1.2rem; }
+    .container .content ul {
+      width: 100%;
+      padding: 0.373333rem 0.32rem; }
+      .container .content ul li {
+        margin-bottom: 0.426667rem;
+        height: 3.653333rem;
+        width: 100%;
+        position: relative; }
+        .container .content ul li a {
+          width: 100%;
+          height: 100%;
+          display: inline-block; }
+          .container .content ul li a img {
+            width: 100%;
+            height: 100%; }
+        .container .content ul li span {
+          color: white; }
+          .container .content ul li span:nth-of-type(1) {
+            position: absolute;
+            font-size: 0.533333rem;
+            top: 0.973333rem;
+            left: 50%;
+            margin-left: -0.533333rem; }
+          .container .content ul li span:nth-of-type(2) {
+            background: url("../../images/yuanxian.png");
+            background-size: 100% 100%;
+            width: 5.466667rem;
+            height: 0.186667rem;
+            display: inline-block;
+            position: absolute;
+            top: 1.773333rem;
+            left: 1.96rem; }
+          .container .content ul li span:nth-of-type(3) {
+            position: absolute;
+            top: 2.173333rem;
+            left: 1.493333rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 7.5rem; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  width: 10rem;
+  height: 1.466667rem;
+  border-top: 1px solid #dcdcdc; }
+  .footer ul {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: 100%; }
+    .footer ul li {
+      text-align: center;
+      width: 100%;
+      padding-top: 0.28rem; }
+      .footer ul li a {
+        color: #878787; }
+      .footer ul li > .on {
+        color: #1da09c; }
+      .footer ul li:nth-of-type(1) > a > span {
+        background: url("../../images/search_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.4rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(2) > a > span {
+        background: url("../../images/address_03.jpg");
+        background-size: 100% 100%;
+        width: 0.453333rem;
+        height: 0.44rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(3) > a > span {
+        background: url("../../images/lv_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.48rem;
+        display: inline-block; }
+      .footer ul li:nth-of-type(4) > a > span {
+        background: url("../../images/me_03.jpg");
+        background-size: 100% 100%;
+        width: 0.4rem;
+        height: 0.426667rem;
+        display: inline-block; }
+
+/*# sourceMappingURL=pension.css.map */

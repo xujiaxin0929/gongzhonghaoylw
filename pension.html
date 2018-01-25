@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旅居养老</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/pension/pension.css"/>
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <ul id="lvju_list">
+            </ul>
+            <script type="text/html" id="lvju">
+                {{each data item}}
+                <li>
+                    <a href="./lvjuold_list.html?tid={{item.city_id}}" data-cid="{{item.city_id}}" data-city="{{item.city.short_name}}">
+                        <span>{{item.city.short_name}}</span>
+                        <span></span>
+                        <span>{{item.slogan}}</span>
+                        <img src="{{item.cover_image}}" alt=""/>
+                    </a>
+                </li>
+                {{/each}}
+            </script>
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<a href="lvjuold_list.html">-->
+                        <!--<span>厦门</span>-->
+                        <!--<span></span>-->
+                        <!--<span>海浪从远处嬉笑奔跑而来，卷起层层的浪花</span>-->
+                        <!--<img src="./images/lvju2_03.jpg" alt=""/>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+                <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+                <li><a href="./pension.html" class="on"><span></span><br/>旅居养老</a></li>
+                <li><a href="./personalCenter.html"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="./comm/js/jquery-weui.min.js"></script>
+<script src="js/pension.js"></script>
+</html>

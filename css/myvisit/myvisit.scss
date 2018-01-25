@@ -1,0 +1,89 @@
+@charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑";
+}
+@mixin clearfix{
+  zoom: 1;
+  &:after{
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+.container{
+  width: 10rem;
+  margin: 0 auto;
+}
+.content{
+  dl{
+    padding: 0.4rem 0.32rem;
+    display: flex;
+    display: -webkit-flex;
+    border-bottom: 1px solid #dcdcdc;
+    dt{
+      width: 2.933333rem;
+      margin-right: 0.36rem;
+      img{
+        width: 2.933333rem;
+        height: 2.2rem;
+      }
+    }
+    dd{
+      margin-top: -0.15rem;
+      p{
+        line-height: 0.85rem;
+        &:nth-of-type(1){
+          font-size: 0.4rem;
+        }
+        &:nth-of-type(2){
+          display: flex;
+          display: -webkit-flex;
+          span{
+            &:nth-of-type(1){
+              color: #feb33e;
+            }
+            &:nth-of-type(2){
+              width: 1.84rem;
+              height: 0.666667rem;
+              border: 1px solid #dcdcdc;
+              display: block;
+              line-height: 0.666667rem;
+              text-align: center;
+              margin-right: 0.2rem;
+              color: #6c6a6b;
+              margin-left: 0.693333rem;
+              margin-top: 0.1rem;
+            }
+          }
+        }
+        &:nth-of-type(3){
+          position: relative;
+          a{
+            text-decoration: none;
+            color: #8e8e8e;
+          }
+          span{
+            &:nth-of-type(1){
+              background: url("../../images/address2.png");
+              background-size: 100% 100%;
+              width: 0.333333rem;
+              height:  0.42rem;
+              display: inline-block;
+              position: absolute;
+              top: 0.2rem;
+            }
+            &:nth-of-type(2){
+              margin-left: 0.5rem;
+              color: #8e8e8e;
+            }
+          }
+        }
+      }
+    }
+  }
+}

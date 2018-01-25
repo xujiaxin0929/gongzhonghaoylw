@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加老人信息</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/append/append.css"/>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <style type="text/css">
+    .content form > p input[type=tel] {
+        height: 89%;
+        border: none;
+        outline: none;
+        width:70%;
+    }
+    .content form > p input[type=number],.content form > p input[type=text],.content form > p:nth-of-type(4) textarea
+    {
+        width:70%;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <form action="" method="post">
+                <p><span>姓名</span><input type="text" name="name" maxlength="10" placeholder="请输入姓名"/></p>
+                <p><span>年龄</span><input type="number" name="age" maxlength="3" placeholder="请输入年龄"/></p>
+                <p id="p">
+                    <span>性别</span>
+                    
+
+                    <span class="sp1 gender" data-gender="male">
+                        <label  id="manImg"></label> <span>男</span>
+                    </span>
+                    <span class="sp2 gender" data-gender="famale">
+                        <label  id="famaleImg"></label> <span>女</span>
+                    </span>
+                    <input type="hidden" name="gender" value="famale">
+                    <!--
+                    <input type="radio" id="man" value="male" name="gender" style="display: none">
+                    <input type="radio" id="famale" value="famale" checked name="gender"  style="display: none"> -->
+                </p>
+                <div class="sel">
+                    <span>护理级别</span>
+                    <p class="level">
+                        <span></span>
+                        <select name="level" id="level">
+
+                        </select>
+                        <script type="text/html" id="temLevel">
+                            {{each data item index}}
+                            <option value="{{item.id}}" >{{item.name}}</option>
+                            {{/each}}
+                        </script>
+                    </p>
+                </div>
+                <p>
+                    <span>健康状况</span><textarea name="healthy_desc" placeholder="请输入健康状况"></textarea>
+                    <!-- <span>*健康状况不可为空</span> -->
+                </p>
+                <div class="sel">
+                    <span>入住地区</span>
+                    <p>
+                        <span></span>
+                        <select name="province" id="province">
+                            <option value="选择省份" >选择省份</option>
+                        </select>
+                        <script type="text/html" id="temPro">
+                            {{each data item}}
+                            <option value="{{item}}">{{item}}</option>
+                            {{/each}}
+                        </script>
+                    </p>
+                    <p>
+                        <span></span>
+                        <select name="city_name" id="city">
+                            <option value="选择城市">选择城市</option>
+                        </select>
+                    </p>
+                    <p>
+                        <span></span>
+                        <select name="district" id="country">
+                            <option value="选择地区">选择地区</option>
+                        </select>
+                    </p>
+                </div>
+                <p>
+                    <span>预算</span>
+                    <input type="number" placeholder="请输入预算" style="width:25%" name="budget"/>
+                    <small>*包括床位费、护理费、伙食费等</small>
+                </p>
+                <p>
+                    <span>联系人</span><input name="contacts" type="text" maxlength="10" placeholder="请输入联系人"/>
+                </p>
+                <p>
+                    <span>手机号</span><input type="tel" name="phone"  placeholder="请输入手机号"/>
+                </p>
+                <div class="sel">
+                    <span>与老人关系</span>
+                    <p>
+                        <span></span>
+                        <select name="relationship"  id="relation">
+
+                        </select>
+                        <script type="text/html" id="temRelation">
+                            {{each data item index}}
+                            <option value="{{item.id}}" >{{item.name}}</option>
+                            {{/each}}
+                        </script>
+                    </p>
+                </div>
+                <div  class="btn"><button id="submit" type="button">保存</button></div>
+            </form>
+        </div>
+    </div>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/cityList.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/append.js"></script>
+</body>
+</html>

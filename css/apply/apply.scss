@@ -1,0 +1,131 @@
+@charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑";
+  background: #f6f6f6;
+}
+@mixin clearfix{
+  zoom: 1;
+  &:after{
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+.container{
+  width: 10rem;
+  margin: 0 auto;
+  .content{
+    width: 100%;
+    height: 100%;
+    p{
+      width: 100%;
+      border-bottom: 1px solid #dcdcdc;
+      padding: 0.346667rem 0;
+      padding-left: 1.8rem;
+      background: #fff;
+      input{
+        height: 100%;
+        border: none;
+        outline: none;
+      }
+      &:nth-of-type(1){
+        position: relative;
+        span{
+          background: url("../../images/xm_03.jpg");
+          background-size: 100% 100%;
+          width: 0.426667rem;
+          height: 0.453333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top:0.4rem;
+        }
+      }
+      &:nth-of-type(2){
+        position: relative;
+        span{
+          background: url("../../images/telnum_03.jpg");
+          background-size: 100% 100%;
+          width: 0.32rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top:0.4rem;
+        }
+      }
+      &:nth-of-type(3){
+        position: relative;
+        span{
+          background: url("../../images/oldmen.png");
+          background-size: 100% 100%;
+          width: 0.48rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top:0.4rem;
+        }
+        select{
+          width: 7.5rem;
+          border: none;
+          appearance:none;
+          -webkit-appearance:none;
+          -moz-appearance: none;
+          color: #8e8e8e;
+          background: none;
+        }
+      }
+      &:nth-of-type(4){
+        position: relative;
+        span{
+          background: url("../../images/visit_day.png");
+          background-size: 100% 100%;
+          width: 0.52rem;
+          height: 0.493333rem;
+          position: absolute;
+          left: 0.986667rem;
+          top:0.4rem;
+        }
+        input{
+          width: 7.5rem;
+          border: none;
+          appearance:none;
+          -webkit-appearance:none;
+          -moz-appearance: none;
+          color: #8e8e8e;
+          background: none;
+        }
+      }
+    }
+    button{
+      width: 9.373333rem;
+      height: 1.2rem;
+      background: #feb33e;
+      margin: 0 auto;
+      margin-top: 1.36rem;
+      display: block;
+      border: none;
+      outline: none;
+      border-radius: 0.1rem;
+      font-size: 0.45rem;
+      letter-spacing: 0.2rem;
+      a{
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        line-height: 1.2rem;
+        text-decoration: none;
+      }
+    }
+    &>span{
+      display: block;
+      color: #8e8e8e;
+      text-align: center;
+      margin-top: 0.506667rem;
+    }
+  }
+}

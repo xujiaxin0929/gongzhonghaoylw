@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预约详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/reservation/reservation.css"/>
+   <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+     <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            
+        </div>
+        <script type="text/html" id="tempDetail">
+            <div class="evaluate" >
+                {{each comment item}}
+                <div>
+                    <span><img src="{{item.user.avatar}}" alt=""/></span>
+                    <ul>
+                        <li>{{item.user.nickname}}
+                            <p class="stars">
+                                {{each item.selectStar start}}
+                                <span class="orange"></span>
+                               {{/each}}
+                               {{each  item.gray start}}
+                                <span class="gray"></span>
+                                {{/each}}
+                            </p>
+                        </li>
+                        <li>
+                            {{item.content}}
+                        </li>
+                        {{if item.reply!=''}}
+                        <li><span></span><span>机构回复：</span><span>{{item.reply}}</span></li>
+                        {{/if}}
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+            <ul class="ulO" id="ulO">
+                {{if live.live.status=='2'}}
+                    <li>订单状态<span>已完成</span></li>
+                {{else if live.live.status=='-1'}}   
+                    <li>订单状态<span>已取消</span></li>
+                 {{else if live.live.status=='0'}}   
+                    <li>订单状态<span>待支付</span></li>
+                 {{else if live.live.status=='1'}}   
+                    <li>订单状态<span>已支付</span></li>
+                {{/if}}
+                <li>下单时间<span>{{live.live.create_time}}</span></li>
+                <li>订单编号<span>{{live.id}}</span></li>
+            </ul>
+            <div class="old">
+                <p class="title"><span></span><span>老人信息</span></p>
+                <table>
+                    {{each elder item}}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.sex=='famale'?'女':'男'}}</td>
+                            <td>{{item.age}}岁</td>
+                            <td>{{item.nursing_level}}</td>
+                        </tr>
+                    {{/each}}
+                </table>
+                <!--<a href="javascript:;">+新增一位老人</a>-->
+            </div>
+            <div class="contacts">
+                <p class="title title2"><span></span><span>联系人信息</span></p>
+                {{each elder item}}
+                <p><span>{{item.contact}}</span><span>{{item.mobile}}</span><span>{{item.relation}}</span></p>
+                {{/each}}
+            </div>
+            <div class="list">
+                <dl>
+                    {{if room.cover_image==''}}
+                        <dt><img src="./images/no.png" alt="p"/></dt>
+                        {{else}}
+                        <dt><img src="{{room.cover_image}}" alt="p"/></dt>
+                    {{/if}}
+                    <dd>
+                        <p>{{room.name}}</p>
+                        <p>{{room.room.name}}</p>
+                        <p>{{room.room.area}}㎡  |  {{room.room.orientation}}  |  {{room.room.floor}}层  |  {{room.room.bed_type}}</p>
+                    </dd>
+                </dl>
+                <ul class="ulO">
+                    <li>试住天数：{{live.live.days}}天</li>
+                    <li>入住时间：{{live.live.live_time}}</li>
+                    <li>结束时间：{{live.live.end_time}}</li>
+                    <!--<li>床位费(元/月)：<span>￥2500</span></li>-->
+                    <!--<li>自理<span>￥1200</span></li>-->
+                    <!--<li>伙食费(元/月)<span>￥800</span></li>-->
+                    <!--<li>其他费用(元/月)<span>￥500</span></li>-->
+                    <li>总收费：<span class="zong">￥{{live.total_price}}</span></li>
+                </ul>
+            </div>
+            {{if src=='wait_pay'}}
+            <!--未完成待支付-->
+            <div class="payment">
+                <p>
+                    <span>剩余支付时间</span>
+                    <span id="surplus">13:05</span>
+                </p>
+                <span><a id="payNow" href="javascript:;" data-id="{{live.live_id}}">立即支付</a></span>
+            </div>
+            {{else if src=='has_pay'}}
+            <!--已完成 立即评价-->
+            <div class="now" >
+                <a href="./evaluateNow.html?bid={{live.live.resthome_id}}&lid={{live.live_id}}&src=detail&hid={{live.live.room_id}}">立即评价</a>
+            </div>
+            {{/if}}
+        </script>
+        <div class="footer">
+           <ul>
+                <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+                <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+                <li><a href="./pension.html" ><span></span><br/>旅居养老</a></li>
+                <li><a href="./personalCenter.html" class="on"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/reservation.js"></script>
+</html>

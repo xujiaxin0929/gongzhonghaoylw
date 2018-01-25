@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的参观</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+     <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+     <link rel="stylesheet" href="./css/myvisit/myvisit.css"/>
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+           
+        </div>
+        <script type="text/html" id="tempCollect">
+            {{each data item}}
+             <dl data-id="{{item.id}}">
+                {{if item.resthome.cover_image==''}}
+                    <dt><img src="./images/no.png" alt=""/></dt>
+                    {{else}}
+                    <dt><img src="{{item.resthome.cover_image}}" alt=""/></dt>
+                {{/if}}
+                
+                <dd>
+                    <p>{{item.resthome.name}}</p>
+                    <p><span>￥{{item.resthome.min_charge+'-'+item.resthome.max_charge}}</span><span>七天试住</span></p>
+                    <p><a href="javascript:"><span></span><span>{{item.resthome.address}}</span></a></p>
+                </dd>
+            </dl>
+            {{/each}}
+        </script>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/myvisit.js"></script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加老人信息</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/old_information/old_information.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <style type="text/css">
+    #sure{
+        text-align: center;
+        height: 1rem;
+        line-height: 1rem;
+        width:93.333%;
+        background-color: #feb33e;
+        margin: 0.2rem auto;
+    }
+    .over{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="old">
+                <p class="title"><span></span><span>老人信息</span></p>
+                <table id="oldlist">
+                    
+                </table>
+                <script type="text/html" id="tempoldlist">
+                    {{each data item}}
+                        <tr>
+                        <td class="over">{{item.name}}</td>
+                        <td>{{item.sex=='famale'?'女':'男'}}</td>
+                        <td>{{item.age}}岁</td>
+                        <td>{{item.nursing_level}}</td>
+                            <td class="del" data-oid="{{item.id}}"><span></span></td>
+                         </tr>
+                        {{/each}}
+                </script>
+                <span><a href="./elderlyInformation.html">+新增一位老人</a></span>
+            </div>
+            <div class="contacts" >
+                <p class="title title2"><span></span><span>联系人信息</span></p>
+                <div id="contact">
+
+                </div>
+            </div>
+            <script type="text/html" id="tempContact">
+                {{each data item}}
+                <p><span class="over">{{item.contact}}</span><span>{{item.mobile}}</span><span>{{item.relation}}</span></p>
+                {{/each}}
+            </script>
+            <div id="sure">确认</div> 
+        </div>
+    </div>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/old_information.js"></script>
+</body>
+</html>

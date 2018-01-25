@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立即评价</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-page-mode" content="app">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/evaluateNow/evaluateNow.css"/>
+    <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <dl id="evaluate">
+                
+            </dl>
+            <script type="text/html" id="tempEvaluate">
+                <dt><img src="./images/1_06.jpg" alt=""/></dt>
+                <dd>
+                    <p>{{resthome.name}}</p>
+                    <p>{{name}}</p>
+                    <p>{{area}}㎡  |  {{orientation}}  |  {{floor}}层  |  {{bed_type}}</p>
+                </dd>
+            </script>
+            <div class="pingfen">
+                <div>
+                    <span>餐饮星级：</span>
+                    <ul id="repast_star">
+                        <li class="orange" data-star="1"></li>
+                        <li class="orange" data-star="2"></li>
+                        <li class="orange" data-star="3"></li>
+                        <li class="orange" data-star="4"></li>
+                        <li class="orange" data-star="5"></li >
+                    </ul>
+                </div>
+                <div>
+                    <span>环境星级：</span>
+                    <ul id="envir_star">
+                        <li class="orange" data-star="1"></li>
+                        <li class="orange" data-star="2"></li>
+                        <li class="orange" data-star="3"></li>
+                        <li class="orange" data-star="4"></li>
+                        <li class="orange" data-star="5"></li>
+                    </ul>
+                </div>
+                <div>
+                    <span>护理星级：</span>
+                    <ul id="nurse_star">
+                        <li class="orange" data-star="1"></li>
+                        <li class="orange" data-star="2"></li>
+                        <li class="orange" data-star="3"></li>
+                        <li class="orange" data-star="4"></li>
+                        <li class="orange" data-star="5"></li>
+                    </ul>
+                </div>
+                 <div>
+                    <span>总体星级：</span>
+                    <ul id="star">
+                        <li class="orange" data-star="1"></li>
+                        <li class="orange" data-star="2"></li>
+                        <li class="orange" data-star="3"></li>
+                        <li class="orange" data-star="4"></li>
+                        <li class="orange" data-star="5"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pingjia">
+                <textarea id="content" placeholder="请输入您对本次预约的评价"/></textarea>
+                <a href="javascript:'" id="submit">立即评价</a>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+                <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+                <li><a href="./pension.html" ><span></span><br/>旅居养老</a></li>
+                <li><a href="./personalCenter.html" class="on"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script src="./js/evaluateNow.js"></script>
+</html>

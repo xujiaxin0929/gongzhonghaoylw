@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+     <link rel="stylesheet" href="./css/lvjuold_list/lvjuold_list.css"/>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    
+</head>
+<body>
+<!--我的收藏-->
+<div class="container">
+    <div class="content" style="padding-bottom:1rem">
+        <div id="myCollect"></div>
+        <script type="text/html" id="tempMyCollect">
+                {{each data item}}
+                    <a href="./roomtype.html?bid={{item.id}}">
+                    <dl>
+                        <dt><span>旅居</span><img src="{{item.cover_image}}" alt=""/></dt>
+                        <dd>
+                        <p>{{item.name}}</p>
+                        <p>
+                            <span>￥{{item.min_charge}}-{{item.max_charge}}</span>
+                            <span>床位<span>{{item.beds}}</span>张</span>
+                        </p>
+                        <p>
+                            <span></span>
+                            <span>{{item.address}}</span>
+                        </p>
+                    </dd>
+                    </dl>
+                    <ul>
+                        {{each item.resthomeFeatures item}}
+                        <li>
+                            <span class="{{item.type}}"></span>
+                            <span>{{item.description}}</span>
+                        </li>   
+                        {{/each}}
+                    </ul>
+                    </a>
+                {{/each}}
+        </script>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="index.html" class="on"><span></span><br/>养老院查询</a></li>
+            <li><a href=""><span></span><br/>养老院地图</a></li>
+            <li><a href="pension.html"><span></span><br/>旅居养老</a></li>
+            <li><a href="personalCenter.html"><span></span><br/>个人中心</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/myfavorite.js"></script>
+</html>

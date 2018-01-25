@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/personalCenter/personalCenter.css"/>
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div id="userInfo">
+                
+            </div>
+            <script type="text/html" id="tempUser">
+                <span style="background: url({{headImgUrl}}) no-repeat center;background-size:100%"></span>
+                <span ></span>
+                <span id="userName">{{nickname}}</span>
+            </script>
+            <ul>
+                 <li data-href="./personal_information.html"><a href="javascript:;"><p><span></span>个人信息</p><span></span></a></li>
+                <li data-href="./elderly.html"><a href="javascript:;"><p><span></span>老人信息</p><span></span></a></li>
+                <li data-href="./myfavorite.html"><a href="javascript:;"><p><span></span>我的收藏</p><span></span></a></li>
+                <li data-href="./appointment.html"><a href="javascript:;"><p><span></span>我的试住</p><span></span></a></li>
+                <li data-href="./myvisit.html"><a href="javascript:;"><p><span></span>我的参观</p><span></span></a></li>
+            <!--
+                <li><a href="./personal_information.html"><p><span></span>个人信息</p><span></span></a></li>
+                <li><a href="./elderly.html"><p><span></span>老人信息</p><span></span></a></li>
+                <li><a href="./myfavorite.html"><p><span></span>我的收藏</p><span></span></a></li>
+                <li><a href="./appointment.html"><p><span></span>我的试住</p><span></span></a></li>
+                <li><a href="./myvisit.html"><p><span></span>我的参观</p><span></span></a></li>
+                
+                <li><a href="./Institutional_certification.html"><p><span></span>机构认证</p><span></span></a></li>
+                <li><a href="javascript:;"><p><span></span>推广合作</p><span></span></a></li>-->
+            </ul>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+                <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+                <li><a href="./pension.html" ><span></span><br/>旅居养老</a></li>
+                <li><a href="./personalCenter.html" class="on"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+        <script src="./comm/js/jquery-weui.min.js"></script>
+        <script type="text/javascript" src="./js/personalCenter.js"></script>
+    </div>
+</body>
+</html>

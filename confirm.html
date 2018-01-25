@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/confirm/confirm.css"/>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/old_information/old_information.css"/>
+    <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <link rel="stylesheet" href="./css/paysuccess/paysuccess.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+   <style type="text/css">
+        a:hover{text-decoration:none;}
+        #select,#selectDay
+        {
+            width: 2.4rem
+        }
+        #selectDay
+        {
+            opacity: 0;
+            position: absolute;
+            left: 2.3rem;
+            top: 0.0rem;
+            bottom: 0rem;
+            width: 2.5rem;
+        }
+        #startTime
+        {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contents" style="display:none;height: 100vh;background-color: white;">
+            <span></span>
+            <p id="t1">提交成功</p>
+            <p id="t2">订单提交成功，请完成付款</p>
+            <a href="javascript:" id="pay" data-type="pay">立即支付</a>
+            <a href="index.html">返回首页</a>
+        </div>
+
+        <!--
+        <div class="content">
+            <span></span>
+            <p>支付成功</p>
+            <p>订单提交成功，可在我的预约中查看</p>
+            <a href="">我的预约</a>
+            <a href="">返回首页</a>
+        </div>-->
+        <div class="content" style="display:block">
+            <div class="old">
+                <p class="title"><span></span><span>老人信息</span></p>
+                <table id="oldlist">
+           
+    
+                </table>
+                <script type="text/html" id="tempoldlist">
+                    {{each data item}}
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked="{{item.checked}}" value="{{item.id}}" id="id{{item.id}}"><!--checked="{{item.checked}}"-->
+                            <label for="id{{item.id}}" class="lab"></label>
+                        </td>
+                        <td><label for="id{{item.id}}">{{item.name}}</label></td>
+                        <td><label for="id{{item.id}}">{{item.sex=='famale'?'女':'男'}}</label></td>
+                        <td><label for="id{{item.id}}">{{item.age}}岁</label></td>
+                        <td><label for="id{{item.id}}">{{item.nursing_level}}</label></td>
+                    </tr>
+                    {{/each}}
+                </script>
+            </div>
+            <div class="list" id="orderInfo">
+                
+            </div>
+                <script type="text/html" id="tempOrderInfo">
+                    <dl>
+                        {{if house.cover_image==''}}
+                            <dt><img src="./images/no.png" alt="p"/></dt>
+                            {{else}} 
+                             <dt><img src="{{house.cover_image}}" alt="p"/></dt>
+                        {{/if}}
+                        <dd>
+                            <p>{{house.resthome.name}}</p>
+                            <p>{{house.beds}}</p>
+                            <p>{{house.area}}㎡  |  {{house.orientation}}  |  {{house.floor}}层  |  {{house.bed_type}}</p>
+                        </dd>
+                    </dl>
+                    <ul>
+                        <li>试住天数：{{live_apply.days}}天</li>
+                        <!-- <li>请选择入住时间 <label class="right"></label> <input type="date" value="请选择入住时间" id="selectDay"/></li>-->
+                        <li id="startTime">入住时间：
+                            <input type="text" value="请选择入住时间" readonly id="select"/>
+                         <input type="date" style="display:none" autofocus="true" id="selectDay"/>
+                         <label class="right" style="width: 0.15rem;height: 0.25rem;"></label>
+                         </li>
+                        <li>结束时间：<input type="text" value="结束时间" placeholder="结束时间" readonly id="endDay"/></li>
+                        <li>试住费用：<span class="zong">￥{{live_apply.days*live_apply.daily_charge*live_apply.peoples}}</span></li>
+                    </ul>
+                    <p class="p1"><span></span><span>其他费用详情</span><span style="float: right;padding-right: 0.44rem">{{live_apply.once_charge}}</span></p>
+                    <!--<p class="p2"></p>-->
+                    <p class="p1"><span></span><span>试住须知</span></p>
+                    <p class="p2">订单提交需支付全部房费，订单确认后不可取消修改。</p>
+                    <p class="p3"><a id="submit" href="javascript:;">提交订单</a></p>
+                </script>
+        </div>
+  
+        <div class="footer">
+              <ul>
+                <li data-nav="check"><a  class="on"><span></span><br/>养老院查询</a></li>
+                <li data-nav="map"><a ><span></span><br/>养老院地图</a></li>
+                <li data-nav="tourism"><a ><span></span><br/>旅居养老</a></li>
+                <li data-nav="center"><a ><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+     <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/confirm.js"></script>
+</html>

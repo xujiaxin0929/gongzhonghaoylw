@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预约订单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/reservationOrder/reservationOrder.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="old">
+            <p class="title"><span></span><span>老人信息</span></p>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="check">
+                        <label for="check"></label>
+                    </td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>66岁</td>
+                    <td>半自理</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="check1">
+                        <label for="check1"></label>
+                    </td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>66岁</td>
+                    <td>半自理</td>
+                </tr>
+            </table>
+        </div>
+        <div class="list">
+            <dl>
+                <dt><img src="../images/1_06.jpg" alt="p"/></dt>
+                <dd>
+                    <p>北京朝阳区康梦圆老年公寓</p>
+                    <p>单人间</p>
+                    <p>36㎡  |  朝南  |  2层  |  大床</p>
+                </dd>
+            </dl>
+            <ul>
+                <li>试住天数：7天</li>
+                <li>请选择入住时间 ><input type="text" id="city1"/></li>
+                <li>结束时间：<input type="text" id="city2" placeholder="请选择入住时间"/></li>
+                <li>月收费：<span class="zong">￥5030</span></li>
+            </ul>
+            <p class="p1"><span></span><span>其他费用详情</span></p>
+            <p class="p2">订单提交需支付全部房费，订单确认后不可取消修改。</p>
+            <p class="p1"><span></span><span>试住须知</span></p>
+            <p class="p2">订单提交需支付全部房费，订单确认后不可取消修改。</p>
+            <p class="p3"><a href="submitsuccess.html">预约订单</a></p>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="index.html" class="on"><span></span><br/>养老院查询</a></li>
+            <li><a href=""><span></span><br/>养老院地图</a></li>
+            <li><a href="pension.html"><span></span><br/>旅居养老</a></li>
+            <li><a href="personalCenter.html"><span></span><br/>个人中心</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/datePicker.js"></script>
+<script>
+    var cityO = new datePicker();
+    var cityA = new datePicker();
+    cityO.init({
+        'trigger': '#city1',
+        'type': 'date',
+        'minDate':'1900-1-1',
+        'maxDate':'2100-12-31',
+        "onSubmit":function(){
+            var theSelectData=cityO.value;
+        },
+        "onClos":function(){
+        }
+    });
+    cityA.init({
+        'trigger': '#city2',
+        'type': 'date',
+        'minDate':'1900-1-1',
+        'maxDate':'2100-12-31',
+        "onSubmit":function(){
+            var theSelectData=cityA.value;
+        },
+        "onClos":function(){
+        }
+    });
+</script>

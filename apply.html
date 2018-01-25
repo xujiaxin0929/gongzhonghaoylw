@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请入驻补贴</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+     <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/apply/apply.css"/>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <style type="text/css">
+    #data
+    {
+        position: absolute;
+        opacity: 0;
+        left: 1rem;
+        top:0;
+    }
+    #form input
+    {
+        width: 80%;
+    }
+    #old_img
+    {
+        background: url('./images/zx2_03.jpg') no-repeat center center;
+        background-size: 100% 100%;
+    }
+    #form span
+    {
+        top:0.3rem;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+        <form id="form">
+            <p><span></span><input type="text" name="uname" placeholder="请输入姓名"/></p>
+            <p><span></span><input type="tel"  name="phone" placeholder="请输入手机号"/></p>
+            <p>
+                <span id="old_img"></span>
+                <select name="elder_id" id="oldList" style="color:#ababab">
+                  <option>请选择老人</option>
+                </select>
+            </p>
+            <p style="position:relative">
+                <span></span>
+                <input type="text"  placeholder="请选择入住时间" value="" name="live_date" id="selectDate"/>
+                 <input type="date"  placeholder="请选择入住时间" value=""  id="data"/>
+            </p>
+            <button type="button"><a href="javascript:;" id="submit">提交</a></button>
+            </form>
+            <span>请填写准确信息，我们工作人员会及时与您联系</span>
+        </div>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/apply.js"></script>
+</html>

@@ -1,0 +1,189 @@
+@charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑";
+}
+@mixin clearfix{
+  zoom: 1;
+  &:after{
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+.container{
+  width: 10rem;
+  height: 100%;
+  margin: 0 auto;
+  background: #f6f6f6;
+}
+.content{
+  ul{
+    background: #fff;
+    li{
+      @include clearfix;
+      padding-left: 0.96rem;
+      padding-top: 0.333333rem;
+      padding-bottom: 0.333333rem;
+      padding-right: 0.32rem;
+      border-bottom: 1px solid #dcdcdc;
+      &>p{
+        float: left;
+        color: #878787;
+      }
+      //&>span{
+      //  float: right;
+      //}
+      input{
+        border: none;
+        outline: none;
+        width: 98%;
+        padding-left: .1rem;
+      }
+      p{
+        input{
+          border: none;
+          outline: none;
+          width: 98%;
+          padding-left: .1rem;
+        }
+      }
+      &:nth-of-type(1){
+        p{
+          display: flex;
+          display: -webkit-flex;
+          width: 100%;
+          span{
+              background: url("../../images/house.png");
+              background-size: 100% 100%;
+              width: 0.453333rem;
+              height:0.506667rem;
+              display: inline-block;
+              margin-right: 0.2rem;
+            }
+        }
+      }
+      &:nth-of-type(2){
+        p{
+          display: flex;
+          display: -webkit-flex;
+          span{
+            &:nth-of-type(1){
+              background: url("../../images/file_03.jpg");
+              background-size: 100% 100%;
+              width: 0.48rem;
+              height:0.48rem;
+              display: block;
+              margin-right: 0.2rem;
+              margin-top: 0.15rem;
+            }
+            &:nth-of-type(2){
+              width: 6.333333rem;
+              background: none;
+              display: block;
+              height: 100%;
+              text-align:left;
+            }
+          }
+        }
+        span{
+          width: 1.546667rem;
+          height: 0.733333rem;
+          float: right;
+          a{
+            width: 100%;
+            height: 100%;
+            background: #f2f2f2;
+            line-height: 0.733333rem;
+            text-align: center;
+            color: #878787;
+            display: block;
+            text-decoration: none;
+          }
+        }
+      }
+      &:nth-of-type(3){
+        display: flex;
+        display: -webkit-flex;
+          span{
+            background: url("../../images/xm_03.jpg");
+            background-size: 100% 100%;
+            width: 0.45rem;
+            height:0.48rem;
+            display: inline-block;
+            margin-right: 0.2rem;
+            margin-top: 0.05rem;
+          }
+      }
+      &:nth-of-type(4){
+        display: flex;
+        display: -webkit-flex;
+        span{
+          background: url("../../images/telnum_03.jpg");
+          background-size: 100% 100%;
+          width: 0.38rem;
+          height:0.5rem;
+          display: inline-block;
+          margin-right: 0.2rem;
+          margin-top: 0.05rem;
+        }
+      }
+      &:nth-of-type(5){
+        padding: 0;
+        padding-left: 1.5rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        @include clearfix;
+        position: relative;
+        input{
+          width: 68%;
+        }
+        span{
+          &:nth-of-type(1){
+            background: url("../../images/yan.png");
+            background-size: 100% 100%;
+            width: 0.6rem;
+            height: 0.453333rem;
+            position: absolute;
+            left: 0.986667rem;
+            top:0.4rem;
+          }
+          &:nth-of-type(2){
+            width: 2.5rem;
+            height: 100%;
+            border-left: 1px solid #dcdcdc;
+            text-align: center;
+            display: inline-block;
+            color: #feb33e;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+  div{
+    padding: 1.373333rem 0.186667rem;
+    button{
+      width: 100%;
+      height: 1.2rem;
+      background: #feb33e;
+      border: none;
+      outline: none;
+      border-radius: 0.2rem;
+      a{
+        color: white;
+        text-decoration: none;
+        font-size: 0.45rem;
+        letter-spacing: 0.1rem;
+        width: 100%;
+        height: 100%;
+        display: block;
+        line-height: 1.2rem;
+      }
+    }
+  }
+}

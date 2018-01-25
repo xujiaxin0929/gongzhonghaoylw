@@ -1,0 +1,138 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑"; }
+
+.content form > p:nth-of-type(3) .sp1 label, .content form > p:nth-of-type(3) .sp2 label {
+  background: url("../../images/xuan1_03.jpg");
+  background-size: 100% 100%;
+  width: 0.346667rem;
+  height: 0.346667rem;
+  display: inline-block; }
+.content form > p:nth-of-type(3) .sp1 input[type="radio"]:checked + label, .content form > p:nth-of-type(3) .sp2 input[type="radio"]:checked + label {
+  background: url("../../images/xuan2_03.jpg");
+  background-size: 100% 100%;
+  width: 0.346667rem;
+  height: 0.346667rem;
+  display: block; }
+
+.container {
+  width: 10rem;
+  margin: 0 auto; }
+
+.content {
+  width: 100%; }
+  .content form > p {
+    height: 1.25rem;
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 1.2rem; }
+    .content form > p > span:nth-of-type(1) {
+      display: inline-block;
+      width: 2.2rem;
+      height: 100%;
+      text-align: right;
+      margin-right: 0.466667rem;
+      font-size: 0.4rem; }
+    .content form > p input[type=text] {
+      height: 88%;
+      border: none;
+      outline: none; }
+    .content form > p input[type=number] {
+      height: 89%;
+      border: none;
+      outline: none; }
+    .content form > p:nth-of-type(4) {
+      height: 3rem;
+      line-height: 0;
+      position: relative; }
+      .content form > p:nth-of-type(4) textarea {
+        height: 98%;
+        width: 4.3rem;
+        border: none;
+        resize: none;
+        padding-top: 0.2rem;
+        margin-left: 2.8rem; }
+      .content form > p:nth-of-type(4) span:nth-of-type(1) {
+        position: absolute;
+        top: .5rem; }
+      .content form > p:nth-of-type(4) span:nth-of-type(2) {
+        position: absolute;
+        font-size: .3rem;
+        color: red;
+        bottom: 0.3rem;
+        right: 0.4rem; }
+    .content form > p:nth-of-type(5) {
+      position: relative; }
+      .content form > p:nth-of-type(5) input {
+        width: 2.026667rem;
+        height: 50%; }
+      .content form > p:nth-of-type(5) small {
+        color: red;
+        font-size: .2rem; }
+    .content form > p:last-of-type select {
+      width: 2.4rem;
+      height: 0.666667rem;
+      color: #6c6a6b;
+      border: none;
+      border: 1px solid #dcdcdc;
+      background: none; }
+  .content form .sel {
+    height: 1.2rem;
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 1.2rem; }
+    .content form .sel > span {
+      display: inline-block;
+      width: 2.2rem;
+      height: 100%;
+      text-align: right;
+      margin-right: 0.466667rem; }
+    .content form .sel p {
+      display: inline-block;
+      position: relative;
+      border: 1px solid #dcdcdc;
+      height: .7rem;
+      line-height: .6rem;
+      width: 2.2rem; }
+      .content form .sel p span {
+        width: .1rem;
+        height: .1rem;
+        position: absolute;
+        left: 85%;
+        top: 32%;
+        border: 3px solid #acacac;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        transform: rotateZ(45deg); }
+      .content form .sel p select {
+        color: #6c6a6b;
+        border: none;
+        width: 100%;
+        height: 100%;
+        background: none;
+        padding-left: .1rem;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none; }
+  .content .btn {
+    padding: 0.386667rem 0.32rem; }
+    .content .btn #submit {
+      width: 100%;
+      height: 1.2rem;
+      background: #feb33e;
+      color: white;
+      border: none;
+      outline: none;
+      border-radius: 0.2rem;
+      font-size: .45rem;
+      letter-spacing: .1rem; }
+
+.level {
+  width: 3.5rem !important; }
+
+/*# sourceMappingURL=append.css.map */

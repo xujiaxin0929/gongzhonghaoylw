@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机构个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/mechanism/mechanism.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bindInfo/bindInfo.css">
+    <script src="./comm/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+    <style type="text/css">
+        .li{
+                padding: 0 !important;
+                border:none !important;
+        }
+        #form div.contents
+        {
+        		padding: 0
+        }
+        .code_img
+        {
+        	display: inline-block;
+        	width: 0.5rem;
+        	height: 0.6rem;
+        	position: absolute;
+			top: 0.3rem;
+			left: 0.9rem;
+        	background: url('./images/checkcode.png') no-repeat center center;
+        	background-size: 100% 100%;
+        }
+        #form .contents ul li:nth-of-type(3) input {
+		    height: 100%;
+		    border: none;
+		    outline: none;
+		    height: 1.1rem;
+		    width: 95%;
+		   }
+		   #form ul li:nth-of-type(3) {
+		   		padding:0;
+				zoom: 1;
+				padding-left: 0.96rem;
+				padding-right: 0.32rem;
+				border-bottom: 1px solid #dcdcdc;
+			}
+			#form ul li:nth-of-type(3) span
+			{
+				    margin-top: 0.33rem;
+			}
+			#form ul li:nth-of-type(4) input {
+				border: none;
+				outline: none;
+				    height: 1rem;
+    			width: 68%;
+			}
+    </style>
+<body style="display:none">
+    <div class="container" style="display:none">
+        <div class="content" id="center" >
+            <div class="head">
+                <span id="photo"></span>
+                <span></span>
+                <span id="userName"></span>
+            </div>
+        </div>
+            <script type="text/html" id="tempOrgList">
+                {{each data item}}
+                    <a href="./list.html?oid={{item.id}}">
+                        <dl>
+                          <dt><img src="images/1_06.jpg" alt=""/></dt>
+                            <dd>
+                                <p class="one_line">{{item.name}}</p>
+                                <p>
+                                    <span>￥{{item.min_charge}}-{{item.max_charge}}</span>
+                                    <span>床位<span>{{item.beds}}</span>张</span>
+                                </p>
+                                <p style="width:100%">
+                                    <span></span>
+                                    <span style="padding-left:0.2rem">{{item.address}}</span>
+                                </p>
+                            </dd>
+                        </dl>
+                    </a>
+                {{/each}}
+            </script>
+    </div>
+    <div id="containers" style="display:none">
+    <form id="form" >
+			<div class="contents">
+				<ul>
+					<li class="li"></li>
+                <li class="li"></li>
+					<li><span></span><input type="number" name="phone" placeholder="请输入手机号"/></li>
+					<li style="position:relative"><b class="code_img"></b><input type="number" name="codenumber" placeholder="请输入验证码"><span id="doCode">获取验证码</span></li>
+				</ul>
+				<div class="btn"><button id="subimit" type="button"><a href="javascript:">提交</a></button></div>
+			</div>
+		</form>
+	</div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+  	<script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script src="./js/mechanism.js"></script>
+</html>

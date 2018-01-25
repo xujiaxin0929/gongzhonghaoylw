@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的预约</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+     <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+     <link rel="stylesheet" href="./css/appointment/appointment.css"/>
+     <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <style type="text/css">
+        a:hover{text-decoration:none;}
+    </style>
+</head>
+<body>
+    <div class="container" style="background-color:white">
+        <div class="content">
+            <ul id="navBar">
+                <li data-type="wait_pay" class="blue">待支付</li>
+                <li data-type="has_pay">已支付</li>
+                <li data-type="wait_comment">已评价</li>
+            </ul>
+            <div id="orderList" style="padding-bottom:2rem">
+            </div>
+                <script type="text/html" id="tempList">
+                    {{each data.final_arr item index}}
+                    <div style="background-color:#f6f6f6;border-bottom:none;padding-bottom:0.28rem;">
+                        <p style="background-color:white">
+                            <span>下单时间：<span>{{item.create_time}}</span></span>
+                            {{if item.status=='-1'}}
+                            <span class="type1">已取消</span>
+                            {{else if item.status=='0'}}
+                            <span class="type1">待支付</span>
+                            {{else if item.status=='1'}}
+                            <span class="type1">已支付</span>
+                            {{else if item.status=='2'}}
+                            <span class="type1">已完成</span>
+                            {{/if}}
+                        </p>
+                        <dl  data-lid="{{item.id}}" style="background-color:white; border-bottom: 1px solid #dcdcdc;">
+                            {{if item.resthome.cover_image==''}}
+                                <dt><img src="./images/no.png" alt=""/></dt>
+                                {{else}}
+                                <dt><img src="{{item.resthome.cover_image}}" alt=""/></dt>
+                            {{/if}}
+                            <dd>
+                                <p>{{item.resthome.name}}</p>
+                                <p>￥{{item.total}}</p>
+                                <p>
+                                <span>七天试住</span>
+                                <span>入住时间：{{item.live_time}}</span>
+                                </p>
+                                <p><a href="javascript:;"><span></span><span>{{item.resthome.address}}</span></a></p>
+                            </dd>
+                        </dl>
+                        {{if item.status=='1'}}
+                        <p style="background-color:white;border-top:none;border-bottom: 1px solid #dcdcdc;">
+                            <span></span>
+                            <span></span>
+                            <span><a href="./evaluateNow.html?bid={{item.resthome_id}}&hid={{item.room_id}}&lid={{item.id}}">评价</a></span>
+                        </p>
+                        {{else if item.status=='0'}}
+                         <p style="background-color:white;border-top:none;border-bottom: 1px solid #dcdcdc;">
+                                <span>剩余支付时间：</span>
+                                <span class="time_{{index}}"></span>
+                                <span><a class="payNow" data-id="{{item.id}}" href="javascript:;">立即支付</a></span>
+                        </p>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </script>
+        </div>
+         <div class="footer">
+           <ul>
+                <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+                <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+                <li><a href="./pension.html" ><span></span><br/>旅居养老</a></li>
+                <li><a href="./personalCenter.html" class="on"><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/cityList.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/appointment.js"></script>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="./css/index/index.css"/>
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=ZMDBZ-YNYWQ-K7X5T-G34KI-QBHS7-YNB5L"></script>
+</head>
+	<style type="text/css">
+       a:hover{text-decoration:none;}
+		 .one_line
+		{
+		overflow:hidden; 
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		}
+		.loadmore
+		{
+			text-align: center;
+		}
+      .data
+      {
+        text-align: center;
+        padding:0.5rem;
+      }
+
+     #filterContent
+      {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			/*
+			position: relative;
+			top: 0.1066rem;*/
+      }
+      #doFilter_s
+      {
+      		position: relative;
+			top: 0.1066rem;
+      }
+      #clearFilter
+      {
+      	display: inline-block;
+      	width: 0.5rem;
+      	height: 0.5rem;
+      	background: url(./images/clear.png) no-repeat center center;
+      	background-size: 100%  100%;
+      	visibility: hidden;
+      }
+      .content .filter
+      {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+         display: -webkit-inline-flex;
+         -webkit-align-items: center;
+        -webkit-justify-content: space-between;
+        width: 100%;
+      }
+      #filterFlag
+      {
+        display: inline-block;
+        width: 0.8rem;
+        padding: 0;
+        text-align: center;
+        height: 0.54rem;
+        line-height: 0.54rem
+      }
+      #icon
+      {
+        background: url('images/title_04.png') no-repeat left top;
+        background-size: 100% 100%;
+        width: 2.5rem;
+        height: 0.8rem;
+        display: inline-block;
+        margin-top: 0.3rem;
+      }
+	</style>
+<body >
+    <div style="display:none" id="container" class="container" style="background-color:white">
+        <div class="header">
+            <a id="expressArea" href="javascript:;">
+                <span></span>
+                <span id="city">北京</span>
+            </a>
+            <span id="icon"  style="display:inline-block;"></span>
+            <div id="showBox" style="display:none;width:0rem;opacity:0;">
+                <span></span>
+                <input type="text" style="color:#ccc" placeholder="请输入机构关键词"  id="doSearch"/>
+            </div>
+            <a href="javascript:;" class="search">搜索</a>
+        </div>
+        <div class="content">
+            <div  class="swiper-container">
+                <ul class="swiper-wrapper">
+                </ul>
+                <script id="swiper_items" type="text/html" >
+                    {{each list item }}
+                    <li class="swiper-slide"><a href="{{item.url}}"><img style="width:100%" src="{{item.image}}" alt=""/></a></li>
+                    {{/each}}
+                </script>
+            </div>
+            <div class="filter" style="padding: 0.243333rem 0.333333rem;">
+                <span  id="filterFlag" style="visibility: hidden;">已选</span>
+                <span id="filterContent" style="visibility: hidden;display: inline-block;width: 70%;"></span>
+                <span id="clearFilter"></span>
+                <a href="javascript:;" id="doFilter">
+                    <span>筛选</span>
+                    <span></span>
+                </a>
+            </div>
+            <div id="bh_list" style="background-color:white">
+            </div>
+            <p id='nodata' class="data" style="display:none">没有找到相关数据</p>
+              <script type="text/html" id="test">
+            			{{each beadhouse item}}
+							<a href="./roomtype.html?bid={{item.id}}">
+	                    <dl>
+	                        <dt>
+                                            {{if item.status=='3'||item.status=='2'}}
+                                            <span>推荐</span>
+                                            {{/if}}
+                                            <img src="{{item.cover_image}}" alt=""/></dt>
+	                        <dd>
+	                            <p class="one_line">{{item.name}}</p>
+	                            <p>
+	                                <span>￥{{item.min_charge}}-{{item.max_charge}}</span>
+	                                <span>床位<span>{{item.beds}}</span>张</span>
+	                            </p>
+	                            <p style="width:100%">
+	                                <span></span>
+	                                <span style="width:100%">{{item.address}}</span>
+	                            </p>
+	                        </dd>
+	                    </dl>
+	                    <ul>
+	                    	{{each item.resthomeFeatures value}}
+	                        <li>
+	                            <span class="{{value.type}}"></span>
+	                            <span>{{value.description}}</span>
+	                        </li>
+	                        {{/each}}
+	                    </ul>
+                		</a>
+            			{{/each}}
+            </script>
+            <!--
+            <script type="text/html" id="loadmore">
+            		{{if show}}
+						<p class="loadmore" >
+							{{msg}}
+						</p>
+            		{{/if}}
+            </script>-->
+        </div>
+        <div class="footer">
+            <ul>
+                <li data-nav="check"><a  class="on"><span></span><br/>养老院查询</a></li>
+                <li data-nav="map"><a ><span></span><br/>养老院地图</a></li>
+                <li data-nav="tourism"><a ><span></span><br/>旅居养老</a></li>
+                <li data-nav="center"><a ><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择城市</h3>
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+</body>
+  <script src="./comm/js/jquery-weui.min.js"></script>
+  <script src="./comm/js/jquery.area_index.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+</html>

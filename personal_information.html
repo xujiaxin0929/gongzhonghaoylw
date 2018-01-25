@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+     <link rel="stylesheet" href="./css/personal_information/personal_information.css"/>
+     <link rel="stylesheet" type="text/css" href="./comm/css/comm.css">
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <style type="text/css">
+          
+            .container .content p
+            {
+                padding-top: 0.05rem;
+                padding-bottom:0.05rem
+               
+            }
+            .container .content p input
+            {
+                 height: 1.1rem;
+				 width:90%;
+            }
+            .container .content p:nth-of-type(3) input {
+                position: relative;
+                top: -0.05rem;
+            }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <form id="form">
+            <p><span></span><input type="text" id="name"  name="username" readonly placeholder="请输入姓名"/></p>
+            <p><span></span><input type="tel" id="phone"  name="phone" placeholder="请输入手机号码"/></p>
+            <p style="display: none" id="check"><span></span><input type="text" placeholder="请输入验证码" id="code"><span id="getCode">获取验证码</span></p>
+            <p><span></span><input type="text" id="email"  name="email" placeholder="请输入邮箱"/></p>
+            <button type="button"><a href="javascript:" id="submit"> 提交</a></button>
+        </form>
+    </div>
+    <div class="footer">
+       <ul>
+           <li><a href="./index.html" ><span></span><br/>养老院查询</a></li>
+           <li><a href="./map.html" ><span></span><br/>养老院地图</a></li>
+           <li><a href="./pension.html" ><span></span><br/>旅居养老</a></li>
+           <li><a href="./personalCenter.html" class="on"><span></span><br/>个人中心</a></li>
+       </ul>
+    </div>
+</div>
+</body>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="./js/personal_information.js"></script>
+</html>

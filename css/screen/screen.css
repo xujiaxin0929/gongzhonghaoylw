@@ -1,0 +1,82 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "微软雅黑"; }
+
+.cotainer {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
+
+header {
+  width: 100%;
+  height: 1.333333rem;
+  border-bottom: 1px solid #dcdcdc;
+  line-height: 1.333333rem;
+  position: fixed;
+  top: 0;
+  background: #fff; }
+  header span:nth-of-type(1) {
+    margin-left: 0.293333rem; }
+  header span:nth-of-type(2) {
+    float: right; }
+    header span:nth-of-type(2) a {
+      background: url("../../images/right_03.jpg");
+      background-size: 100% 100%;
+      width: 0.226667rem;
+      height: 0.4rem;
+      display: inline-block;
+      float: right;
+      margin-right: 0.4rem;
+      margin-top: 0.506667rem; }
+
+.content {
+  margin-top: 1.333333rem;
+  padding-left: 0.333333rem;
+  padding-right: 0.333333rem;
+  padding-bottom: 2.133334rem; }
+  .content > div {
+    padding-top: 0.533333rem; }
+    .content > div ul {
+      margin-top: 0.4rem;
+      zoom: 1; }
+      .content > div ul:after {
+        display: block;
+        clear: both;
+        content: ''; }
+      .content > div ul li {
+        float: left;
+        background: #f2f2f2;
+        padding: 0.253333rem 0.4rem;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem; }
+      .content > div ul .down {
+        padding: 0.218333rem 0.5rem; }
+      .content > div ul .top {
+        padding: 0.209333rem 0.42rem; }
+
+.footer {
+  width: 100%;
+  padding-top: 0.346667rem;
+  padding-bottom: 0.586667rem;
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
+  position: fixed;
+  bottom: 0;
+  background: #fff; }
+  .footer button {
+    width: 100%;
+    height: 1.2rem;
+    background: #feb33e;
+    border: none;
+    outline: none;
+    border-radius: .1rem;
+    color: white;
+    letter-spacing: .2rem;
+    font-size: 0.45rem; }
+
+/*# sourceMappingURL=screen.css.map */
