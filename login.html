@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+   <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/stylenew.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <!--<link rel="stylesheet" href="./css/index/index.css"/>-->
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=ZMDBZ-YNYWQ-K7X5T-G34KI-QBHS7-YNB5L"></script>
+</head>
+
+<body>
+    <div class="login" id="login">
+        <div class="login_w">
+            <div class="login_title clearfix">
+                <h2>欢迎登陆养老客</h2>
+                <a href="javascript:;">还没有账号立即注册</a>
+            </div>
+            <div class="login_input">
+                <form action="">
+                    <img src="images/ico_user_login.png" alt="">
+                    <input type="text" placeholder='手机号/会员名/昵称/邮箱'>
+                </form>
+                <form action="">
+                    <img src="images/ico_password_login.png" alt="">
+                    <input type="password" placeholder="密码">
+                </form>
+            </div>
+            <div class="login_option">
+                <input type="checkbox" name="" id="">
+                <span>两周内自动登录</span>
+                <img src="images/ico_phone.png" alt="">
+                <span>手机动态密码登录</span>
+            </div>
+            <input type="button" value="登录">
+            <a href="javascript:;">忘记密码?</a>
+            <ul class="clearfix">
+                <li>
+                    <img src="images/ico_qq.png" alt="">
+                    <span>QQ登录</span>
+                </li>
+                <li>
+                    <img src="images/ico_wx.png" alt="">
+                    <span>微信登录</span>
+                </li>
+                <li>
+                    <img src="images/ico_wb.png" alt="">
+                    <span>微博登录</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function ($) {
+        var swiper = new Swiper('.swiper-container');
+    })
+</script>
+
+</html>

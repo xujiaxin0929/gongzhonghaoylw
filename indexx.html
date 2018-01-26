@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/stylenew.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <!--<link rel="stylesheet" href="./css/index/index.css"/>-->
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <script src="./comm/swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=ZMDBZ-YNYWQ-K7X5T-G34KI-QBHS7-YNB5L"></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn" >
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn" >
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="index.html">首页</a>
+            </li>
+            <li>
+                <a href="行业动态dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="深度depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="关于我们aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
+    <div id="home_page" class="home_page">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/homepage_banner.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/homepage_banner.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/homepage_banner.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="hp_recommend" id="hp_recommend">
+            <div class="hp_recommend_w">
+                <div class="hp_recommend_title clearfix">
+                    <img src="images/ico_good.png" alt="">
+                    <h4>北京养老院推荐</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_recommend_scroll">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="scroll_img_box">
+                                <img src="images/recommend_1.png" alt="">
+                                <div class="txt_shadow">
+                                    <span>椿萱茂老年公寓</span>
+                                </div>
+                            </div>
+                            <p>¥2000起</p>
+                            <span>朝阳</span>
+                        </li>
+                        <li>
+                            <div class="scroll_img_box">
+                                <img src="images/recommend_1.png" alt="">
+                                <div class="txt_shadow">
+                                    <span>椿萱茂老年公寓</span>
+                                </div>
+                            </div>
+                            <p>¥2000起</p>
+                            <span>朝阳</span>
+                        </li>
+                        <li>
+                            <div class="scroll_img_box">
+                                <img src="images/recommend_1.png" alt="">
+                                <div class="txt_shadow">
+                                    <span>椿萱茂老年公寓</span>
+                                </div>
+                            </div>
+                            <p>¥2000起</p>
+                            <span>朝阳</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hp_hotcity" id="hp_hotcity">
+            <div class="hp_hotcity_w">
+                <div class="hp_hotcity_title">
+                    <img src="images/ico_hotcity.png" alt="">
+                    <h4>当季热门旅居养老城市</h4>
+                </div>
+                <div class="hp_hotcity_box">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascirpt:;">
+                                <img src="images/hotcity_03.png" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    海南三亚
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hp_watch" id="hp_watch">
+            <div class="hp_watch_w">
+                <div class="hp_watch_title">
+                    <img src="images/ico_watch.png" alt="">
+                    <h4>深度看养老</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_watch_tab">
+                    <div class="hp_watch_scroll clearfix">
+                        <p>走进养老院</p>
+                        <ul>
+                            <li>院长、管理层系列</li>
+                            <li>缨束沙龙</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hp_watch_list clearfix">
+                    <img src="images/watch_01.png" alt="">
+                    <div class="hp_watch_txt">
+                        <h4>走进万科嘉园长阳长者中心</h4>
+                        <p>嘉园长阳长者中心是北京万科养老管理公司与房山区政府合作的共建民营养老项目</p>
+                    </div>
+                </div>
+                <div class="hp_watch_list clearfix">
+                    <img src="images/watch_01.png" alt="">
+                    <div class="hp_watch_txt">
+                        <h4>走进万科嘉园长阳长者中心</h4>
+                        <p>嘉园长阳长者中心是北京万科养老管理公司与房山区政府合作的共建民营养老项目</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hp_dynamic" id="hp_dynamic">
+            <div class="hp_dynamic_w">
+                <div class="hp_dynamic_title">
+                    <img src="images/ico_dynamic.png" alt="">
+                    <h4>行业动态</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_dynamic_tab">
+                    <div class="hp_dynamic_scroll clearfix">
+                        <ul class="clearfix">
+                            <li class="dynamic_active">要闻速递</li>
+                            <li>养老院日常</li>
+                            <li>展会信息</li>
+                            <li>养生保健</li>
+                            <li>管理心得</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hp_dynamic_list clearfix">
+                    <img src="images/dynamic_1.png" alt="">
+                    <div class="hp_dynamic_txt">
+                        <h4>2017中国国际养生健康大会</h4>
+                        <p>习近平指出，当前，中美各领域交往与合作继续推进。</p>
+                        <span>本站原创</span>
+                        <span class="data">2017年9月7日 16:20</span>
+                        <div class="fabulous">
+                            <img src="images/ico_fabulous.png" alt="">
+                            <span class="fabulous_num">11</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hp_dynamic_content clearfix">
+                    <h4>2017中国国际养生健康大会暨第二届中医药健康养生</h4>
+                    <p>习近平指出，当前，中美各领域交往与合作继续推进。两国外交安全团队和经济团队保持密切沟通，双方正在筹备首轮中美社会和人文对话</p>
+                    <span>本站原创</span>
+                    <span class="data">2017年9月7日 16:20</span>
+                    <div class="fabulous">
+                        <img src="images/ico_fabulous.png" alt="">
+                        <span class="fabulous_num">11</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hp_brand" id="hp_brand">
+            <div class="hp_brand_w">
+                <div class="hp_brand_title">
+                    <img src="images/ico_brand.png" alt="">
+                    <h4>养老品牌推荐</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_brand_list">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/brand_list_01.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="hp_footer" id="hp_footer">
+            <div class="hp_footer_w">
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">联系我们</a>
+                    </li>
+                    <li>
+
+                        <a href="javascript:;">网站声明</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">招贤纳士</a>
+                    </li>
+                </ul>
+                <div class="hp_footer_ba">
+                    <p>Copyright © 2008 - 2017 养老客 All Rights Reserved</p>
+                    <span>京ICP备09078674号 </span>
+                    <span>京公网安备1101055035号</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--选择地区弹层-->
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择城市</h3>
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <!--遮罩层-->
+        <div id="areaMask" class="mask"></div>
+</body>
+<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script src="js/headcommon.js"></script>
+<script>
+    $(function ($) {
+        var swiper = new Swiper('.swiper-container', {
+            loop:true,
+            autoplay:2000,
+            speed:500,
+            autoplayDisableOnInteraction : false,
+            observer : true,
+            observeParents : true
+        });
+        // var city = remote_ip_info['city'];
+        // var citySpan = $('.city');
+        // citySpan.html(city);
+        
+    })
+</script>
+<script src="./comm/js/jquery-weui.min.js"></script>
+  <script src="./comm/js/jquery.area_index.js"></script>
+  <script type="text/javascript" src="./js/indexx.js"></script>
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>养老院详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!--         <meta name="format-detection" content="telephone=no"/>  
+    <meta name="format-detection" content="email=no"/>   -->
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="./comm/css/jquery-weui.css">
+    <link rel="stylesheet" href="./css/roomtype/roomtype.css"/>
+    <link rel="stylesheet" href="./comm/swiper/css/swiper.min.css"/>
+    <script src="./comm/js/flexible.js"></script>
+    <script src="./comm/js/flexible_css.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./comm/js/template-web.js"></script>
+    <script src="./js/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=ZMDBZ-YNYWQ-K7X5T-G34KI-QBHS7-YNB5L"></script>
+</head>
+    <style type="text/css">
+    #doCollect{
+        display: -webkit-flex;
+    }
+       .container .content .table .detail .type dl > dd:nth-of-type(1) p:nth-of-type(1) span:nth-of-type(2)
+       {
+        border-radius: 0.15rem;
+       }
+    .container .content .table .detail .type dl > dd:nth-of-type(1) p:nth-of-type(1) span:nth-of-type(2) a
+    {
+        display: inline-block;
+    }
+    .container .content .table .detail .type dl > dd:nth-of-type(1) p:nth-of-type(1) span:nth-of-type(2) a b
+    {
+        display: block;
+        padding:0;
+        line-height: 0.4rem;
+        position: relative;
+        top:0.05rem;
+    }
+    #status
+    {
+        background-image: url('./images/lvju2.png');
+        text-align: center;
+        color:white;
+        line-height: 0.533333rem;
+    }
+    </style>
+<body>
+    <div class="container" style="display:none;">
+        <div class="content">
+          <div class="swiper-container">
+                    
+                    <ul class="swiper-wrapper">
+                      <!--   <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li> -->
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div> 
+            <div class="swiper">
+             <!--轮播-->
+                <!-- <div class="swiper-container">
+                    
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                        <li class="swiper-slide"><a href=""><img src="./images/banner2_02.jpg" alt=""/></a></li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div> -->
+                <ul id="beadhose_detail">
+                    
+                </ul>
+                <script type="text/html" id="detail_temp">
+                    <li>
+                        <p>
+                            {{if beadhouse.status==3}}
+                                <span id="status">推荐</span>
+                                <span style=" white-space: normal; ">{{beadhouse.title}}</span>
+                            {{/if}}
+                             {{if beadhouse.status!=3}}
+                                 <span style="background:none;width:0"></span>
+                                 <span style="margin-left:0; white-space: normal;">{{beadhouse.title}}</span>
+                            {{/if}}
+                            
+                        </p>
+                        <p id="doCollect" >
+                            <span id="star"></span><span>收藏</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>￥<span>{{beadhouse.price}}</span></p>
+                        <p>床位<span>{{beadhouse.total}}</span>张</p>
+                    </li>
+                    <li>
+                        {{if beadhouse.ext==''}}
+                            {{if beadhouse.handphone}}
+                            <p >
+                                <span></span><span><a href="tel:{{beadhouse.phone}}">{{beadhouse.handphone}}</a></span>
+                            </p>
+                            {{/if}}
+                            {{if beadhouse.phone}}
+                            <p>
+                                <span></span><span><a href="tel:{{beadhouse.phone}}"> {{beadhouse.phone}}</a></span>
+                            </p>
+                            {{/if}}
+                        {{/if}}
+                        {{if beadhouse.ext!='' }}
+                            <p >
+                                <span></span><span><a href="tel:400-099-6090">400-099-6090转{{beadhouse.ext}}</a></span>
+                            </p>
+                        {{/if}}
+                    </li>
+                    <li>
+                        <p>
+                            <a href="{{beadhouse.latLng}}"><span></span><span>{{beadhouse.address}}</span></a>
+                        </p>
+                    </li>
+                    <li>
+                    	{{each beadhouse.pos item}}
+                        <p>
+                            <span class="{{item.type}}"></span><span>{{item.description}}</span>
+                        </p>
+                     {{/each}}
+                    </li>
+                    <li>
+                        <p><a class="checkImg" href="javascript:;">精彩图集</a></p>
+                        <p><a id="doVisit" href="javascript:;">预约参观</a></p>
+                        <!--<p><a id="doVisit" href="javascript:;">预约参观</a></p>
+                        <p><a id="apply" href="javascript:;">申请入驻补贴</a></p>-->
+                        
+                    </li>
+                </script>
+            </div>
+        <!--选项卡：详情、评价-->
+            <div class="table">
+                <ul>
+                    <li class="selected" id="doDetail">详情</li>
+                    <li id="doEvaluate">评价</li>
+                </ul>
+        <!--详情-->
+                <div class="detail" id="bhDetail">
+                <!--房间类型-->
+                   
+                </div>
+                <script type="text/html" id="detailTemp">
+                    {{if  beadhouse_detail.hou_type}}
+                    <div class="type">
+                        <p class="triangle">
+                            <span>房间类型</span>
+                            <span></span>
+                        </p>
+                        	{{each beadhouse_detail.hou_type item}}
+                        <dl>
+                            {{if item.img==''}}
+                                <dt><img src="./images/no.png" alt=""/></dt>
+                            {{else}}
+                                <dt><img src="{{item.img}}" alt=""/></dt>
+                            {{/if}}
+                            <dd>
+                                <p>
+                                    <span>{{item.name}}</span>
+                                    <span class="doLiving" data-id="{{item.housre_id}}"><a href="javascript:"><b>￥{{item.price}}</b><b>7天试住</b></a></span>
+                                </p>
+                                <p>{{item.size}}㎡  |  {{item.direction}}  |  {{item.floor}}层  |  {{item.bed_style}}</p>
+                                <p>
+                                    <span >床位费：</span>
+                                    <span style="color:#8e8e8e;">￥{{item.bed_price}}</span>
+                                </p>
+                            </dd>
+                            <dd>请在提交订单时查看费用明细</dd>
+                            <dd>{{item.level}}</dd>
+                        </dl>
+                        {{/each}}
+
+                    </div>
+                    {{/if}}
+                <!--机构介绍-->
+                    {{if beadhouse_detail.org_desc}}
+                    <div class="introduce">
+                        <p class="triangle">
+                            <span>机构介绍</span>
+                            <span></span>
+                        </p>
+                        <div>
+                            {{@beadhouse_detail.org_desc}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{if beadhouse_detail.charge_content}}
+                <!--收费标准-->
+                    <div class="standard">
+                        <p class="triangle">
+                            <span>收费标准</span>
+                            <span></span>
+                        </p>
+                        <div>
+                        		 {{@beadhouse_detail.charge_content}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{if beadhouse_detail.facilities}}
+                <!--设施-->
+                    <div class="facilities">
+                        <p class="trian">
+                            <span>设施</span>
+                            <span></span>
+                        </p>
+                        {{each  beadhouse_detail.facilities item}}
+                        <dl>
+                            <dt>
+                                {{if item.type=='room'}}
+                                <span  class="room"></span>
+                                <span>老人房间设备</span>
+                                {{ else if item.type=='recreation'}}
+                                <span class="recreation"></span>
+                                 <span>休闲娱乐设备</span>
+                                 {{else if item.type=='public'}}
+                                 <span class="public"></span>
+                                  <span>公共服务设备</span>
+                                {{else if item.type=='safe'}}
+                                 <span class="safe"></span>
+                                  <span>安全保障设施</span>
+                                  {{else if item.type=='medical'}}
+                                 <span class="medical"></span>
+                                  <span>医疗康复设施</span>
+                                {{/if}}
+                            </dt>
+                            <dd>
+                                <p>
+                                    {{each item.content value}}
+                                    <span>{{value}}</span>
+                                    {{/each}}
+                                    
+                                </p>
+                              
+                            </dd>
+                        </dl>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{if beadhouse_detail.server_content}}
+                <!--服务内容-->
+                    <div class="sever">
+                        <p class="triangle">
+                            <span>服务内容</span>
+                            <span></span>
+                        </p>
+                        <div>
+                        {{@beadhouse_detail.server_content}} 
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{if beadhouse_detail.notice}}
+                <!--入驻须知-->
+                    <div class="notice">
+                        <p class="triangle">
+                            <span>入驻须知</span>
+                            <span></span>
+                        </p>
+                        	<div>{{@beadhouse_detail.notice}}</div>
+                        
+                    </div>
+                    {{/if}}
+                    {{if beadhouse_detail.trafic}}
+                <!--交通-->
+                    <div class="traffic">
+                        <p class="trian">
+                            <span>交通</span>
+                            <span></span>
+                        </p>
+                        <div id="map" style="height:4rem">
+                            <!--
+                            <img src="./images/ditu_03.jpg" alt=""/>-->
+                        </div>
+                    </div>
+                    {{/if}}
+                      <!--精彩图集-->
+                    <div class="tu"><a class="checkImg" href="javascript:"><span ></span><span >精彩图集</span></a></div>
+                </script>
+        <!--评价-->
+                <div class="evaluate">
+
+                </div>
+                <script type="text/html" id="tmpEvalute">
+                    {{each data item}}
+                    <div>
+                        <span><img src="{{item.user.avatar}}" alt=""/></span>
+                        <ul>
+                            <li>{{item.user.nickname}}
+                                <p class="stars">
+                               		{{each item.user.goodStar i}}
+                                    <span class="orange"></span>
+                    				{{/each}}
+                                   {{each item.user.badStar j}}
+                                    <span class="gray"></span>
+                                  {{/each}}
+                                </p>
+                            </li>
+                            <li>
+                                {{item.content}}
+                            </li>
+                            {{if item.reply!=''}}
+                            <li><span></span><span>机构回复：</span><span>{{item.reply}}</span></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                    {{/each}}
+                 
+                </script>
+            </div>
+            <!--   {{if canLoadMore}}
+            	{{each item.user.goodStar good}
+                                    <span class="orange"></span>
+                                    {{/each}}
+                                   {{each item.user.badStar bad}}
+                                    <span class="gray"></span>
+                                  {{/each}}
+                        <p style="text-align:center">{{text}}</p>
+                    {{/if}}-->
+        </div>
+    <!--底部-->
+        <div class="footer">
+            <ul>
+                <li data-nav="check"><a  class="on"><span></span><br/>养老院查询</a></li>
+                <li data-nav="map"><a ><span></span><br/>养老院地图</a></li>
+                <li data-nav="tourism"><a ><span></span><br/>旅居养老</a></li>
+                <li data-nav="center"><a ><span></span><br/>个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="viewImage" style="display:none">
+      <span class="close">关闭</span>
+       <p class="pages">1/23</p>
+       <p class="filterStatus" style="text-align: center;">
+         
+         <!-- <span><i>外景</i></span>
+         <span><i>内景</i></span> -->
+       </p>
+       <script type="text/html" id="filterBtn">
+       	{{each data item index}}
+       		{{if item.type=='outside'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">外景</span>
+       			</span>
+       		{{else if item.type=='room'}}
+       			<span data-type="{{item.type}}">
+       				<span class="{{index==item.len-1?'':'line'}}">房间</span>
+       			</span>
+       		{{else if item.type=='environment'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">环境</span>
+       			</span>
+       		{{else if item.type=='facility'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">设施</span>
+       			</span>
+       		{{else if item.type=='service'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">服务</span>
+       			</span>
+       		{{else if item.type=='elder'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">老人</span>
+       			</span>
+       		{{else if item.type=='carer'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">护工</span>
+       			</span>
+       		{{else if item.type=='activity'}}
+       			<span data-type="{{item.type}}">
+       				<span  class="{{index==item.len-1?'':'line'}}">活动</span>
+       			</span>
+       		{{/if}}
+       	{{/each}}
+       </script>
+       <div class="wrap">
+         <ul class="viewBox">
+          <!-- <li><img src="./images/banner_03.jpg"></li>
+          <li><img src="./images/banner2_02.jpg"></li>
+          <li><img src="./images/banner_03.jpg"></li>
+          <li><img src="./images/banner_03.jpg"></li>
+          <li><img src="./images/banner2_02.jpg"></li>
+          <li><img src="./images/banner_03.jpg"></li> -->
+         </ul>
+         <script type="text/html" id="imgsBox">
+         		{{each data item}}
+         			{{each item.img_arr img}}
+         			<li data-type="{{item.type}}"><img src="{{img}}"></li>
+         			{{/each}}
+         		{{/each}}
+         </script>
+       </div>
+       
+    </div>
+    <script src="./comm/js/jquery-weui.min.js"></script>
+ 	<script type="text/javascript" src="./comm/js/TotalControl.js"></script>
+  	<script src="./js/roomtype.js"></script>
+</body>
+</html>

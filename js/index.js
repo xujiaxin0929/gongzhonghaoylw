@@ -41,12 +41,12 @@ function InitData()
  	if(!_filterSrc){
 	
 			$.IsLogin(function(){
-				$.InitJsTicket(true,function(res){
+				
 					$.getLocalStorage('localCity',function(cn){
 						//没有缓存数据
 						if(!cn)
 						{
-							getCityName(res)
+							getCityName()
 						}
 						else
 						{
@@ -59,13 +59,13 @@ function InitData()
 					//调用事件
 					CreateCmdPanel();
 					$.callback=selectCity;
-				},true);
+				
 			})
 	   
  	}
  	else
  	{
- 		$.InitJsTicket(false,undefined,true);
+ 		
 
 		//调用事件
 		CreateCmdPanel();
@@ -619,7 +619,7 @@ function getBeadhose(sendData)
 }
 //城市选择
 function selectCity(res){
-	$.InitJsTicket(false,undefined,true);
+	// $.InitJsTicket(false,undefined,true);
 	//城市名称
 	_cityName=res.trim();
 	//储存用户当前城市
@@ -643,28 +643,37 @@ function selectCity(res){
 	
 }
 //根据经纬度获取城市名称
-function getCityName(latlng){
-	//实例经纬度
-	var latLng=	new qq.maps.LatLng(latlng.latitude,latlng.longitude)
-	//实例地址解析类
-	var citylocation = new qq.maps.Geocoder();
-	//根据指定的坐标进行解析。
-	citylocation.getAddress(latLng);
-	//设置检索成功后的回调函数，
-	citylocation.setComplete(function(result) {
-		var cityname=result.detail.addressComponents.city;
-		$.cityName=(result.detail.addressComponents.province+'>'+cityname).trim();
+function getCityName(){
+	// //实例经纬度
+	// var latLng=	new qq.maps.LatLng(latlng.latitude,latlng.longitude)
+	// //实例地址解析类
+	// var citylocation = new qq.maps.Geocoder();
+	// //根据指定的坐标进行解析。
+	// citylocation.getAddress(latLng);
+	// //设置检索成功后的回调函数，
+	// citylocation.setComplete(function(result) {
+	// 	var cityname=result.detail.addressComponents.city;
+	// 	$.cityName=(result.detail.addressComponents.province+'>'+cityname).trim();
+	var cityname = remote_ip_info['city'];
+        // var citySpan = $('.city');
+        // citySpan.html(city);
+		if(cityname == undefined){
+		$('#city').html('北京市')
+		return false;
+	}
+		cityname = cityname + '市';
+		$.alert(cityname)
 		$('#city').html(cityname);
-		//$.alert(cityname)
 		_cityName=cityname;
 		//储存用户当前城市
 		$.setLocalStorage('localCity',_cityName,undefined,true)
 		getBeadhose(undefined)
-	});
+	// });
 	//没有解析出地址，默认为北京市
-	citylocation.setError(function(){
-			$('#city').html('北京市')
-	})
+	// cityname.setError(function(){
+	// 		$('#city').html('北京市')
+	// })
+	
 }
 
 //获取养老院列表

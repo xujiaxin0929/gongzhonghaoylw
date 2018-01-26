@@ -161,38 +161,41 @@
 					}
 		},true);
 		if(!$.uid)
-		{	
-			var code= $.GetUrlPara('code');
-				//将code值传到后台服务器，以获取用户信息
-			if(code)
-			{
-				var hostname=window.location.hostname
-				//拼写传送报文
-				var sendData={
-					url:$.httpType+hostname,
-					code:code
-				};
-				//调用用户登陆接口
-				$.UserLogin(sendData,function(data){
-						$.uid=data.user_id;
-						//储存本地
-						$.setLocalStorage('userInfo',data.user_id,callback,true);
-						$.setLocalStorage('userInfoData',JSON.stringify(data),undefined,true);
-				},function(err){
-
-				})
-			}	
-			else//url上没有code值
-			{
-				//调用腾讯授权接口
-				$.GetPower(function(data){
-					window.location.href=data
-				},function(err){
-
-				})
-			}
-			
+		{
+			window.location.href = 'login.html';
 		}
+		// {	
+		// 	var code= $.GetUrlPara('code');
+		// 		//将code值传到后台服务器，以获取用户信息
+		// 	if(code)
+		// 	{
+		// 		var hostname=window.location.hostname
+		// 		//拼写传送报文
+		// 		var sendData={
+		// 			url:$.httpType+hostname,
+		// 			code:code
+		// 		};
+		// 		//调用用户登陆接口
+		// 		$.UserLogin(sendData,function(data){
+		// 				$.uid=data.user_id;
+		// 				//储存本地
+		// 				$.setLocalStorage('userInfo',data.user_id,callback,true);
+		// 				$.setLocalStorage('userInfoData',JSON.stringify(data),undefined,true);
+		// 		},function(err){
+
+		// 		})
+		// 	}	
+		// 	else//url上没有code值
+		// 	{
+		// 		//调用腾讯授权接口
+		// 		$.GetPower(function(data){
+		// 			window.location.href=data
+		// 		},function(err){
+
+		// 		})
+		// 	}
+			
+		// }
 		else
 		{
 			callback()
