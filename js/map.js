@@ -12,7 +12,7 @@ function InitData(){
 	$.navImg('./images/dt.png');
 	$.InitJsTicket(true,function(res){
 
-		var pos={lat:res.latitude,lng:res.longitude};
+		var pos={lat:116.47037587879743,lng:116.47037587879743};
 		$.getLocalStorage('localCity',function(cn){
 			if(!cn){
 				getCityName(pos,function(){

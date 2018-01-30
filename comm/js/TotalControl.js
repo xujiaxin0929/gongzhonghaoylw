@@ -89,7 +89,7 @@
 		var _WxApiPath='http://weidx.piccnet.com.cn/WXYS/$pageservice/wx_jsapi.aspx';//测试调用验证jssdk地址
 		var _SafetyControl=true;//是否进行安全控制,true不能复制链接等,false可以复制链接等
 		
-
+		 sessionStorage.setItem("userInfo", "undefindd");
 		//获取URL中的参数
 		$.GetUrlPara=function(str)
 		{
@@ -102,7 +102,9 @@
 
 
 		//检查有没有openid以及是不是用微信浏览器打开
-		$.InitPageState=function()
+		/**
+		 * 
+		 $.InitPageState=function()
 		{
 			if(_SafetyControl)
 			{
@@ -116,17 +118,10 @@
 				}
 				else
 				{
-			/*
-						if(!_openid)
-						{
-										$.ShowAlert('请您从菜单进入!');
-										var opened=window.open('about:blank', '_self');
-										opened.opener=null;
-										opened.close();
-						}*/
-		}
+				}
 			}
 		}
+		*/
 	//改变公共js中的变量值
 	$.SetPubPara=function(name,value)
 	{
@@ -162,7 +157,7 @@
 		},true);
 		if(!$.uid)
 		{
-			window.location.href = 'login.html';
+			console.log(1);
 		}
 		// {	
 		// 	var code= $.GetUrlPara('code');
